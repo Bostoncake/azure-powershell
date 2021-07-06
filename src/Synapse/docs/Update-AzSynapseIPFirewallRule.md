@@ -255,38 +255,10 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ISynapseIdentity>: Identity Parameter
-  - `[BaselineName <VulnerabilityAssessmentPolicyBaselineName?>]`: The name of the vulnerability assessment rule baseline (default implies a baseline on a Sql pool level rule and master for workspace level rule).
-  - `[BigDataPoolName <String>]`: Big Data pool name
-  - `[BlobAuditingPolicyName <String>]`: The name of the blob auditing policy.
-  - `[ColumnName <String>]`: The name of the column.
-  - `[ConnectionPolicyName <ConnectionPolicyName?>]`: The name of the connection policy.
-  - `[DataMaskingPolicyName <DataMaskingPolicyName?>]`: The name of the data masking policy for which the masking rule applies.
-  - `[DataMaskingRuleName <String>]`: The name of the data masking rule.
-  - `[DataWarehouseUserActivityName <DataWarehouseUserActivityName?>]`: The activity name of the Sql pool. 
-  - `[GeoBackupPolicyName <GeoBackupPolicyName?>]`: The name of the geo backup policy.
   - `[Id <String>]`: Resource identity path
-  - `[IntegrationRuntimeName <String>]`: Integration runtime name
-  - `[KeyName <String>]`: The name of the workspace key
-  - `[LinkId <String>]`: The ID of the replication link.
-  - `[NodeName <String>]`: Integration runtime node name
-  - `[OperationId <String>]`: Operation ID
-  - `[PrivateLinkHubName <String>]`: Name of the privateLinkHub
   - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[RestorableDroppedSqlPoolId <String>]`: The id of the deleted Sql Pool in the form of sqlPoolName,deletionTimeInFileTimeFormat
-  - `[RestorePointName <String>]`: The name of the restore point.
-  - `[RuleId <String>]`: The vulnerability assessment rule ID.
   - `[RuleName <String>]`: The IP firewall rule name
-  - `[ScanId <String>]`: The vulnerability assessment scan Id of the scan to retrieve.
-  - `[SchemaName <String>]`: The name of the schema.
-  - `[SecurityAlertPolicyName <SecurityAlertPolicyName?>]`: The name of the security alert policy.
-  - `[SensitivityLabelSource <WritableSensitivityLabelSource?>]`: The source of the sensitivity label.
-  - `[SqlPoolName <String>]`: SQL pool name
   - `[SubscriptionId <String>]`: The ID of the target subscription.
-  - `[TableName <String>]`: The name of the table.
-  - `[TransparentDataEncryptionName <TransparentDataEncryptionName?>]`: The name of the transparent data encryption configuration.
-  - `[VulnerabilityAssessmentName <VulnerabilityAssessmentName?>]`: The name of the vulnerability assessment.
-  - `[WorkloadClassifierName <String>]`: The name of the workload classifier.
-  - `[WorkloadGroupName <String>]`: The name of the workload group.
   - `[WorkspaceName <String>]`: The name of the workspace
 
 REQUEST <IReplaceAllIPFirewallRulesRequest>: Replace all IP firewall rules request

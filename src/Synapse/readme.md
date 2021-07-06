@@ -36,13 +36,13 @@ require:
   - $(this-folder)/../readme.azure.noprofile.md
 input-file:
 # You need to specify your swagger files here.
-  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/bigDataPool.json
+#  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/bigDataPool.json
   - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/firewallRule.json
-  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/integrationRuntime.json
-  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/sqlPool.json
-  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/workspace.json
-  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/keys.json
-  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/privatelinkhub.json
+#  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/integrationRuntime.json
+#  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/sqlPool.json
+#  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/workspace.json
+#  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/keys.json
+#  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/privatelinkhub.json
 
 # If the swagger has not been put in the repo, you may uncomment the following line and refer to it locally
 # - (this-folder)/relative-path-to-your-swagger 
