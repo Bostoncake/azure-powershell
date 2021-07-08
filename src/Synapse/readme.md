@@ -67,6 +67,21 @@ directive:
       subject: IPFirewallRule
     set:
       subject: FirewallRule
+  - where:
+      model-name: ^IPFirewallRule(.*)
+    set:
+      format-table:
+        properties:
+          - Name
+          - StartIPAddress
+          - EndIPAddress
+        labels:
+          StartIPAddress: Start IP Address
+          EndIPAddress: End IP Address
+        width:
+          Name: 30
+          StartIPAddress: 20
+          EndIPAddress: 20
     
   - where:
       variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^Update$|^UpdateViaIdentity$
