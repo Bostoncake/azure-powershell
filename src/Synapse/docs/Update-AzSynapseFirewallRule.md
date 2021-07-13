@@ -23,23 +23,12 @@ Updates a firewall rule.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Update a firewall rule from a workspace
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+PS C:\> Remove-AzSynapseFirewallRule -ResourceGroupName firewallrule -WorkspaceName firewallruletest -RuleName allowUser3 -StartIPAddress 121.0.0.0 -EndIPAddress 130.255.255.255
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This command updates start ip address and end ip address for firewall rule named allowUser3 from workspace firewallruletest under resource group firewallrule.
 
 ## PARAMETERS
 

@@ -21,3 +21,16 @@ allowAll                       0.0.0.0              255.255.255.255
 ```
 
 This command lists firewall rule allowAll under workspace firewallruletest from resource group firewallrule.
+
+### Example 3: Get a firewall rule by pipeline
+
+```powershell
+PS C:\> $fwr = New-AzSynapseFirewallRule -ResourceGroupName firewallrule -WorkspaceName firewallruletest -RuleName allowUser4 -StartIPAddress 200.0.0.0 -EndIPAddress 209.255.255.255
+PS C:\> Get-AzSynapseFirewallRule -InputObject $fwr
+
+Name                           Start IP Address     End IP Address
+----                           ----------------     --------------
+allowUser4                     200.0.0.0            209.255.255.255
+```
+
+This command gets a firewall rule allowUser4 under workspace firewallruletest from resource group firewallrule through pipeline.
