@@ -90,6 +90,11 @@ directive:
           Name: 30
           StartIPAddress: 20
           EndIPAddress: 20
+  
+  # Change LRO options for CreateOrUpdate API
+  - from: firewallRule.json
+    where: $.paths["/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/firewallRules/{ruleName}"].put
+    transform: delete $["x-ms-long-running-operation-options"]
     
   - where:
       variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^Update$|^UpdateViaIdentity$
