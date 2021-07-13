@@ -1,18 +1,23 @@
-### Example 1: {{ Add title here }}
+### Example 1: List all firewall rules under a workspace
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Get-AzSynapseFirewallRule -ResourceGroupName firewallrule -WorkspaceName firewallruletest
 
-{{ Add output here }}
+Name                           Start IP Address     End IP Address
+----                           ----------------     --------------
+allowAll                       0.0.0.0              255.255.255.255
+allowUser1                     100.0.0.0            109.255.255.255
+allowUser2                     110.0.0.0            119.255.255.255
 ```
 
-{{ Add description here }}
+This command lists all firewall rules under workspace firewallruletest from resource group firewallrule.
 
-### Example 2: {{ Add title here }}
+### Example 2: Get a firewall rule by name
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> Get-AzSynapseFirewallRule -ResourceGroupName firewallrule -WorkspaceName firewallruletest -RuleName allowAll
 
-{{ Add output here }}
+Name                           Start IP Address     End IP Address
+----                           ----------------     --------------
+allowAll                       0.0.0.0              255.255.255.255
 ```
 
-{{ Add description here }}
-
+This command lists firewall rule allowAll under workspace firewallruletest from resource group firewallrule.

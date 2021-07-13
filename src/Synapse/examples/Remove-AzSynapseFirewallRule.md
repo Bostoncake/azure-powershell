@@ -1,18 +1,6 @@
-### Example 1: {{ Add title here }}
+### Example 1: Remove a firewall rule from a workspace
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+PS C:\> Remove-AzSynapseFirewallRule -ResourceGroupName firewallrule -WorkspaceName firewallruletest -RuleName allowUser3
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This command removes firewall rule named allowUser3 from workspace firewallruletest under resource group firewallrule.

@@ -67,6 +67,14 @@ directive:
       subject: IPFirewallRule
     set:
       subject: FirewallRule
+  
+  # Remove original Update command using ReplaceAll API
+  - where:
+      verb: Update
+      subject: FirewallRule
+    remove: true
+      
+  # Change firewall rules output format
   - where:
       model-name: ^IPFirewallRule(.*)
     set:

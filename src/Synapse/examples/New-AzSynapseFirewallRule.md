@@ -1,18 +1,10 @@
-### Example 1: {{ Add title here }}
+### Example 1: Create a firewall rule under a workspace
 ```powershell
-PS C:\> {{ Add code here }}
+PS C:\> New-AzSynapseFirewallRule -ResourceGroupName firewallrule -WorkspaceName firewallruletest -RuleName allowUser3 -StartIPAddress 120.0.0.0 -EndIPAddress 129.255.255.255
 
-{{ Add output here }}
+Name                           Start IP Address     End IP Address
+----                           ----------------     --------------
+allowUser3                     120.0.0.0            129.255.255.255
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This command creates a firewall rule named allowUser3 under workspace allowUser3 from resource group firewallrule.

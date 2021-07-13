@@ -21,5 +21,5 @@ Creates or updates a firewall rule
 Deletes a firewall rule
 
 ### [Update-AzSynapseFirewallRule](Update-AzSynapseFirewallRule.md)
-Replaces firewall rules
+Updates a firewall rule.
 
