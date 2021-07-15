@@ -33,7 +33,7 @@ For information on how to develop for `Az.Synapse`, see [how-to.md](how-to.md).
 Branch: 9622c4ff423c2b9ecd42126fe30c575201cbe62e
 require:
 # readme.azure.noprofile.md is the common configuration file
-  - $(this-folder)/../readme.azure.noprofile.md
+  - $(this-folder)/../../readme.azure.noprofile.md
 input-file:
 # You need to specify your swagger files here.
 #  - $(repo)/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-03-01/bigDataPool.json
