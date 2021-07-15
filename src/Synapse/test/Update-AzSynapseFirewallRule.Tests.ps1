@@ -12,19 +12,17 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Update-AzSynapseFirewallRule' {
-    It 'ReplaceExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'UpdateExpanded' {
+        $res = Update-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $env.firewallRule2Name -StartIpAddress "111.0.0.0" -EndIpAddress "118.255.255.255"
+        { $res.Count } | Should -Be 1
+        { $res.StartIpAddress } | Should -Be "111.0.0.0"
+        { $res.EndIpAddress } | Should -Be "118.255.255.255"
     }
 
-    It 'Replace' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'ReplaceViaIdentityExpanded' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
-    }
-
-    It 'ReplaceViaIdentity' -skip {
-        { throw [System.NotImplementedException] } | Should -Not -Throw
+    It 'UpdateViaIdentityExpanded' {
+        $fwr = Get-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $env.firewallRule3Name
+        $res = Update-AzSynapseFirewallRule -InputObject $fwr -StartIpAddress "121.0.0.0" -EndIpAddress "128.255.255.255"
+        { $res.StartIpAddress } | Should -Be "121.0.0.0"
+        { $res.EndIpAddress } | Should -Be "128.255.255.255"
     }
 }

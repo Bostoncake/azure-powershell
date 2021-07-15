@@ -5,7 +5,7 @@ PS C:\> Remove-AzSynapseFirewallRule -ResourceGroupName firewallrule -WorkspaceN
 
 This command removes firewall rule named allowUser3 from workspace firewallruletest under resource group firewallrule.
 
-### Example 1: Remove a firewall rule from a workspace through pipeline
+### Example 2: Remove a firewall rule from a workspace through pipeline
 
 ```powershell
 PS C:\> $fwr = New-AzSynapseFirewallRule -ResourceGroupName firewallrule -WorkspaceName firewallruletest -RuleName allowUser5 -StartIPAddress 200.0.0.0 -EndIPAddress 209.255.255.255

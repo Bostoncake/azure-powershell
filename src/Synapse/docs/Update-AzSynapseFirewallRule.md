@@ -12,10 +12,18 @@ Updates a firewall rule.
 
 ## SYNTAX
 
+### UpdateExpanded (Default)
 ```
 Update-AzSynapseFirewallRule -ResourceGroupName <String> -RuleName <String> -WorkspaceName <String>
- [-EndIPAddress <String>] [-StartIPAddress <String>] [-SubscriptionId <String>] [-DefaultProfile <PSObject>]
+ [-SubscriptionId <String>] [-EndIPAddress <String>] [-StartIPAddress <String>] [-DefaultProfile <PSObject>]
  [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded
+```
+Update-AzSynapseFirewallRule -InputObject <ISynapseIdentity> [-EndIPAddress <String>]
+ [-StartIPAddress <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -25,7 +33,7 @@ Updates a firewall rule.
 
 ### Example 1: Update a firewall rule from a workspace
 ```powershell
-PS C:\> Remove-AzSynapseFirewallRule -ResourceGroupName firewallrule -WorkspaceName firewallruletest -RuleName allowUser3 -StartIPAddress 121.0.0.0 -EndIPAddress 130.255.255.255
+PS C:\> Update-AzSynapseFirewallRule -ResourceGroupName firewallrule -WorkspaceName firewallruletest -RuleName allowUser3 -StartIPAddress 121.0.0.0 -EndIPAddress 130.255.255.255
 ```
 
 This command updates start ip address and end ip address for firewall rule named allowUser3 from workspace firewallruletest under resource group firewallrule.
@@ -77,6 +85,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Identity parameter.
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Synapse.Models.ISynapseIdentity
+Parameter Sets: UpdateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -NoWait
 Run the command asynchronously
 
@@ -97,7 +121,7 @@ The name of the resource group.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -112,7 +136,7 @@ The name of the firewall rule.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -142,7 +166,7 @@ The ID of the target subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -157,7 +181,7 @@ The name of the workspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -203,6 +227,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.Synapse.Models.ISynapseIdentity
+
 ## OUTPUTS
 
 ### Microsoft.Azure.PowerShell.Cmdlets.Synapse.Models.Api20210301.IIPFirewallRuleInfo
@@ -210,6 +236,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <ISynapseIdentity>: Identity parameter.
+  - `[Id <String>]`: Resource identity path
+  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
+  - `[RuleName <String>]`: The IP firewall rule name
+  - `[SubscriptionId <String>]`: The ID of the target subscription.
+  - `[WorkspaceName <String>]`: The name of the workspace
 
 ## RELATED LINKS
 
