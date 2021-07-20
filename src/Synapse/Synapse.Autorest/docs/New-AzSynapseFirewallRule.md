@@ -12,10 +12,25 @@ Creates or updates a firewall rule
 
 ## SYNTAX
 
+### CreateExpanded
 ```
 New-AzSynapseFirewallRule -ResourceGroupName <String> -RuleName <String> -WorkspaceName <String>
  [-SubscriptionId <String>] [-EndIPAddress <String>] [-StartIPAddress <String>] [-DefaultProfile <PSObject>]
  [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaSwitchParameterAllowAllAzureIp
+```
+New-AzSynapseFirewallRule -ResourceGroupName <String> -RuleName <String> -WorkspaceName <String>
+ -AllowAllAzureIp [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaSwitchParameterAllowAllIp
+```
+New-AzSynapseFirewallRule -ResourceGroupName <String> -RuleName <String> -WorkspaceName <String> -AllowAllIp
+ [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +49,48 @@ allowUser3                     120.0.0.0            129.255.255.255
 
 This command creates a firewall rule named allowUser3 under workspace allowUser3 from resource group firewallrule.
 
+### Example 2: Create a firewall rule allowing all IP under a workspace
+```powershell
+PS C:\> New-AzSynapseFirewallRule -ResourceGroupName firewallrule -WorkspaceName firewallruletest -RuleName allowUser6 -AllowAllIp
+
+Name                           Start IP Address     End IP Address
+----                           ----------------     --------------
+allowUser6                     0.0.0.0              255.255.255.255
+```
+
+This command creates a firewall rule named allowUser3 under workspace allowUser3 from resource group firewallrule.
+
 ## PARAMETERS
+
+### -AllowAllAzureIp
+Allow all Azure IPv4 Ip.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateViaSwitchParameterAllowAllAzureIp
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowAllIp
+Allow all IPv4 Ip.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateViaSwitchParameterAllowAllIp
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AsJob
 Run the command as a job
@@ -73,7 +129,7 @@ Must be greater than or equal to startIpAddress
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -135,7 +191,7 @@ Must be IPv4 format
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False

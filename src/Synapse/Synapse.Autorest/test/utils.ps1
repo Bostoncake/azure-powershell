@@ -9,7 +9,7 @@ $env = @{}
 function setupEnv() {
 
     Write-Host -ForegroundColor Yellow "WARNING: Need to use released Az.Synapse module. Please check if Az.Synapse(0.1.0 or Greater) installed."
-    # Import-Module -Name Az.Synapse
+    Import-Module -Name Az.Synapse
     Write-Host "asdasd"
 
     # Preload subscriptionId and tenant from context, which will be used in test

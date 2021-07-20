@@ -18,4 +18,17 @@ Describe 'New-AzSynapseFirewallRule' {
         $res.Name | Should -Be $name
         { Remove-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $name } | Should -Not -Throw
     }
+    It 'CreateViaSwitchParameterAllowAllIp' {
+        $name = "firewallrule-test-" + $env.rstr11
+        $res = New-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $name -AllowAllIp
+        $res.StartIpAddress | Should -Be "0.0.0.0"
+        $res.EndIpAddress | Should -Be "255.255.255.255"
+        { Remove-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $name } | Should -Not -Throw
+    }
+    It 'CreateViaSwitchParameterAllowAllAzureIp' -skip {
+        $name = "firewallrule-test-" + $env.rstr12
+        $res = New-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $name -AllowAllAzureIp
+        # TODO: Azure IP
+        { Remove-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $name } | Should -Not -Throw
+    }
 }

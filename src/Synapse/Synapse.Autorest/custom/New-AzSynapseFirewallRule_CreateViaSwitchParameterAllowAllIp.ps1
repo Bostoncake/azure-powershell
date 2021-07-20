@@ -19,54 +19,41 @@ Updates a firewall rule.
 .Description
 Updates a firewall rule.
 #>
-function Update-AzSynapseFirewallRule {
+function New-AzSynapseFirewallRule_CreateViaSwitchParameterAllowAllIp {
     [OutputType([Microsoft.Azure.PowerShell.Cmdlets.Synapse.Models.Api20210301.IIPFirewallRuleInfo])]
     [CmdletBinding(DefaultParameterSetName = 'UpdateExpanded', PositionalBinding = $false, SupportsShouldProcess, ConfirmImpact = 'Medium')]
     param(
-        [Parameter(ParameterSetName = 'UpdateExpanded', Mandatory, HelpMessage = "The name of the workspace.")]
+        [Parameter(Mandatory, HelpMessage = "The name of the workspace.")]
         [Microsoft.Azure.PowerShell.Cmdlets.Synapse.Category('Path')]
         [System.String]
         # The name of the workspace.
         ${WorkspaceName},
 
-        [Parameter(ParameterSetName = 'UpdateExpanded', Mandatory, HelpMessage = "The name of the resource group.")]
+        [Parameter(Mandatory, HelpMessage = "The name of the resource group.")]
         [Microsoft.Azure.PowerShell.Cmdlets.Synapse.Category('Path')]
         [System.String]
         # The name of the resource group.
         # The name is case insensitive.
         ${ResourceGroupName},
 
-        [Parameter(ParameterSetName = 'UpdateExpanded', Mandatory, HelpMessage = "The name of the firewall rule.")]
+        [Parameter(Mandatory, HelpMessage = "The name of the firewall rule.")]
         [Microsoft.Azure.PowerShell.Cmdlets.Synapse.Category('Path')]
         [System.String]
         # The name of the firewall rule.
         ${RuleName},
 
-        [Parameter(ParameterSetName = 'UpdateExpanded', HelpMessage = "The ID of the target subscription.")]
+        [Parameter(HelpMessage = "The ID of the target subscription.")]
         [Microsoft.Azure.PowerShell.Cmdlets.Synapse.Category('Path')]
         [Microsoft.Azure.PowerShell.Cmdlets.Synapse.Runtime.DefaultInfo(Script = '(Get-AzContext).Subscription.Id')]
         [System.String]
         # The ID of the target subscription.
         ${SubscriptionId},
 
-        [Parameter(ParameterSetName = 'UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline, HelpMessage = "Identity parameter. To construct, see NOTES section for INPUTOBJECT properties and create a hash table.")]
-        [Microsoft.Azure.PowerShell.Cmdlets.Synapse.Category('Path')]
-        [Microsoft.Azure.PowerShell.Cmdlets.Synapse.Models.ISynapseIdentity]
-        # Identity Parameter
-        # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-        ${InputObject},
-
-        [Parameter(HelpMessage = "The start IP address of the firewall rule.")]
+        [Parameter(Mandatory, HelpMessage = "Allow all IPv4 Ip.")]
         [Microsoft.Azure.PowerShell.Cmdlets.Synapse.Category('Body')]
-        [System.String]
-        # The start IP address of the firewall rule.
-        ${StartIPAddress},
-
-        [Parameter(HelpMessage = "The end IP address of the firewall rule.")]
-        [Microsoft.Azure.PowerShell.Cmdlets.Synapse.Category('Body')]
-        [System.String]
-        # The end IP address of the firewall rule.
-        ${EndIPAddress},
+        [System.Management.Automation.SwitchParameter]
+        # Allow all IPv4 Ip.
+        ${AllowAllIp},
 
         [Parameter(HelpMessage = "The credentials, account, tenant, and subscription used for communication with Azure.")]
         [Alias('AzureRMContext', 'AzureCredential')]
@@ -131,9 +118,8 @@ function Update-AzSynapseFirewallRule {
     process {
         try {
             # 1. GET
-            $hasStartIPAddress = $PSBoundParameters.Remove('StartIPAddress')
-            $hasEndIPAddress = $PSBoundParameters.Remove('EndIPAddress')
             $hasAsJob = $PSBoundParameters.Remove('AsJob')
+            $null = $PSBoundParameters.Remove('AllowAllIp')
             $null = $PSBoundParameters.Remove('RuleName')
             $null = $PSBoundParameters.Remove('WhatIf')
             $null = $PSBoundParameters.Remove('Confirm')
@@ -141,7 +127,6 @@ function Update-AzSynapseFirewallRule {
             $workspace = Az.Synapse\Get-AzSynapseFirewallRule @PSBoundParameters
 
             # 2. PUT
-            $isViaIdentity = $PSBoundParameters.Remove('InputObject')
             $null = $PSBoundParameters.Remove('WorkspaceName')
             $null = $PSBoundParameters.Remove('ResourceGroupName')
             $null = $PSBoundParameters.Remove('SubscriptionId')
@@ -149,45 +134,25 @@ function Update-AzSynapseFirewallRule {
             $hasRule = $false
             $getStartIPAddress
             $getEndIPAddress
-            if (!$isViaIdentity) {
-                for ($i = 0; $i -lt $workspace.Count; $i++) {
-                    if (!$workspace.Name[$i].CompareTo($RuleName)) {
-                        $hasRule = $true
-                        $getStartIPAddress = $workspace[$i].StartIpAddress
-                        $getEndIPAddress = $workspace[$i].EndIpAddress
-                    }
-                }
-            } else {
-                if ($workspace.Count -gt 0) {
+            for ($i = 0; $i -lt $workspace.Count; $i++) {
+                if (!$workspace.Name[$i].CompareTo($RuleName)) {
                     $hasRule = $true
-                    $getStartIPAddress = $workspace.StartIpAddress
-                    $getEndIPAddress = $workspace.EndIpAddress
+                    $getStartIPAddress = "0.0.0.0"
+                    $getEndIPAddress = "255.255.255.255"
                 }
             }
-            
 
             if ($hasRule) {
-                if ($hasStartIPAddress) {
-                    $getStartIPAddress = $StartIPAddress
-                }
-                if ($hasEndIPAddress) {
-                    $getEndIPAddress = $EndIPAddress
-                }
+                Write-Error -Message "There is a firewall rule named $RuleName in workspace $WorkspaceName." -Category InvalidArgument
+            } else {
                 if ($hasAsJob) {
                     $PSBoundParameters.Add('AsJob', $true)
                 }
                 if ($PSCmdlet.ShouldProcess("Firewall rule $($RuleName) from workspace $($WorkspaceName)", "Create or update")) {
-                    if ($isViaIdentity) {
-                        $getWorkspaceName = $workspace.Id.split("/")[8]
-                        $getResourceGroupName = $workspace.Id.split("/")[4]
-                        $getFirewallRuleName = $workspace.Id.split("/")[10]
-                        Az.Synapse\New-AzSynapseFirewallRule -WorkspaceName $getWorkspaceName -ResourceGroupName $getResourceGroupName -RuleName $getFirewallRuleName -StartIpAddress $getStartIPAddress -EndIPAddress $getEndIPAddress @PSBoundParameters
-                    } else {
-                        Az.Synapse\New-AzSynapseFirewallRule -WorkspaceName $WorkspaceName -ResourceGroupName $ResourceGroupName -RuleName $RuleName -StartIpAddress $getStartIPAddress -EndIPAddress $getEndIPAddress @PSBoundParameters
-                    }
+                    $getStartIPAddress = "0.0.0.0"
+                    $getEndIPAddress = "255.255.255.255"
+                    Az.Synapse\New-AzSynapseFirewallRule -WorkspaceName $WorkspaceName -ResourceGroupName $ResourceGroupName -RuleName $RuleName -StartIpAddress $getStartIPAddress -EndIPAddress $getEndIPAddress @PSBoundParameters
                 }
-            } else {
-                Write-Error -Message "No firewall rule named $RuleName in workspace $WorkspaceName." -Category InvalidArgument
             } 
         }
         catch {
