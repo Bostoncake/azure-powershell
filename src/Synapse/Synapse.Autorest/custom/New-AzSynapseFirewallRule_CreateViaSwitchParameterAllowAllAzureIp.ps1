@@ -124,7 +124,7 @@ function New-AzSynapseFirewallRule_CreateViaSwitchParameterAllowAllAzureIp {
             $null = $PSBoundParameters.Remove('WhatIf')
             $null = $PSBoundParameters.Remove('Confirm')
 
-            $workspace = Az.Synapse\Get-AzSynapseFirewallRule @PSBoundParameters
+            $workspace = Az.Synapse.private\Get-AzSynapseFirewallRule_List @PSBoundParameters
 
             # 2. PUT
             $null = $PSBoundParameters.Remove('WorkspaceName')
@@ -155,7 +155,7 @@ function New-AzSynapseFirewallRule_CreateViaSwitchParameterAllowAllAzureIp {
                     # TODO: Azure IP
                     $getStartIPAddress = "0.0.0.0"
                     $getEndIPAddress = "0.0.0.1"
-                    Az.Synapse\New-AzSynapseFirewallRule -WorkspaceName $WorkspaceName -ResourceGroupName $ResourceGroupName -RuleName $RuleName -StartIpAddress $getStartIPAddress -EndIPAddress $getEndIPAddress @PSBoundParameters
+                    Az.Synapse.private\New-AzSynapseFirewallRule_CreateExpanded -WorkspaceName $WorkspaceName -ResourceGroupName $ResourceGroupName -RuleName $RuleName -StartIpAddress $getStartIPAddress -EndIPAddress $getEndIPAddress -SubscriptionId $SubscriptionId @PSBoundParameters
                 }
             } 
         }

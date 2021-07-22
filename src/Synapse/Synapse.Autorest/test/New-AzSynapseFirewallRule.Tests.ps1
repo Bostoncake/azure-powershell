@@ -12,13 +12,13 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'New-AzSynapseFirewallRule' {
-    It 'CreateExpanded' {
+    It 'CreateExpanded' -skip {
         $name = "firewallrule-test-" + $env.rstr10
         $res = New-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $name -StartIpAddress "200.0.0.0" -EndIpAddress "209.255.255.255"
         $res.Name | Should -Be $name
         { Remove-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $name } | Should -Not -Throw
     }
-    It 'CreateViaSwitchParameterAllowAllIp' {
+    It 'CreateViaSwitchParameterAllowAllIp' -skip {
         $name = "firewallrule-test-" + $env.rstr11
         $res = New-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $name -AllowAllIp
         $res.StartIpAddress | Should -Be "0.0.0.0"

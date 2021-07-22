@@ -1,4 +1,18 @@
 {
-  "SubscriptionId": "7a7b5559-58af-401a-b543-61b7321a97ea",
-  "Tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+  "rstr10": "50n4jc",
+  "firewallRule1Name": "firewallruleu8mrwe",
+  "firewallRule2End": "119.255.255.255",
+  "rstr12": "uarn0c",
+  "firewallRule1End": "109.255.255.255",
+  "firewallRule1Start": "100.0.0.0",
+  "resourceGroup": "synapse-rg-yd8ube",
+  "firewallRule3Name": "firewallruleq714lz",
+  "testWorkspace1": "workspaceijpb25",
+  "rstr11": "qgork0",
+  "firewallRule2Start": "110.0.0.0",
+  "firewallRule3End": "129.255.255.255",
+  "Tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+  "firewallRule2Name": "firewallrule024egw",
+  "firewallRule3Start": "120.0.0.0",
+  "SubscriptionId": "051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3"
 }

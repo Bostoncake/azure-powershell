@@ -12,18 +12,18 @@ while(-not $mockingPath) {
 . ($mockingPath | Select-Object -First 1).FullName
 
 Describe 'Get-AzSynapseFirewallRule' {
-    It 'List' {
+    It 'List' -skip {
         $firewallRules = Get-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1
         $firewallRules.Count | Should -Be 3
     }
 
-    It 'Get' {
+    It 'Get' -skip {
         $firewallRule = Get-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $env.firewallRule1Name
         $firewallRule.StartIPAddress | Should -Be $env.firewallRule1Start
         $firewallRule.EndIPAddress | Should -Be $env.firewallRule1End
     }
 
-    It 'GetViaIdentity' {
+    It 'GetViaIdentity' -skip {
         $firewallRulePipein = (Get-AzSynapseFirewallRule -ResourceGroupName $env.resourceGroup -WorkspaceName $env.testWorkspace1 -RuleName $env.firewallRule1Name )
         $firewallRule = Get-AzSynapseFirewallRule -InputObject $firewallRulePipein
         $firewallRule.StartIPAddress | Should -Be $env.firewallRule1Start

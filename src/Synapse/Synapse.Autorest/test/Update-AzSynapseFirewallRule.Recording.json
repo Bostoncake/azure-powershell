@@ -1,0 +1,369 @@
+{
+  "Update-AzSynapseFirewallRule+[NoContext]+UpdateExpanded+$GET+https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules?api-version=2021-03-01+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules?api-version=2021-03-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "11" ],
+        "x-ms-client-request-id": [ "90ee4d3b-56af-46ae-95bb-3a6ae4c84dbf" ],
+        "CommandName": [ "Az.Synapse.private\\Get-AzSynapseFirewallRule_List" ],
+        "FullCommandName": [ "Get-AzSynapseFirewallRule_List" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "x-ms-request-id": [ "b90f98d2-3e21-4dc4-9330-1d9cf78f2fa0" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11978" ],
+        "x-ms-correlation-request-id": [ "c32a0ae4-c632-4c73-841f-47bd5f2f89e0" ],
+        "x-ms-routing-request-id": [ "JAPANEAST:20210722T094729Z:c32a0ae4-c632-4c73-841f-47bd5f2f89e0" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Thu, 22 Jul 2021 09:47:28 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "1124" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"value\":[{\"properties\":{\"provisioningState\":\"Succeeded\",\"startIpAddress\":\"110.0.0.0\",\"endIpAddress\":\"119.255.255.255\"},\"id\":\"/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallrule3rfhvl\",\"name\":\"firewallrule3rfhvl\",\"type\":\"Microsoft.Synapse/workspaces/firewallRules\"},{\"properties\":{\"provisioningState\":\"Succeeded\",\"startIpAddress\":\"100.0.0.0\",\"endIpAddress\":\"109.255.255.255\"},\"id\":\"/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallrulekegx3m\",\"name\":\"firewallrulekegx3m\",\"type\":\"Microsoft.Synapse/workspaces/firewallRules\"},{\"properties\":{\"provisioningState\":\"Succeeded\",\"startIpAddress\":\"120.0.0.0\",\"endIpAddress\":\"129.255.255.255\"},\"id\":\"/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9\",\"name\":\"firewallruleqcrst9\",\"type\":\"Microsoft.Synapse/workspaces/firewallRules\"}]}",
+      "isContentBase64": false
+    }
+  },
+  "Update-AzSynapseFirewallRule+[NoContext]+UpdateExpanded+$PUT+https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallrule3rfhvl?api-version=2021-03-01+2": {
+    "Request": {
+      "Method": "PUT",
+      "RequestUri": "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallrule3rfhvl?api-version=2021-03-01",
+      "Content": "{\r\n  \"properties\": {\r\n    \"endIpAddress\": \"118.255.255.255\",\r\n    \"startIpAddress\": \"111.0.0.0\"\r\n  }\r\n}",
+      "isContentBase64": false,
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "103" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 201,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Location": [ "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/operationResults/08543e15-d0d6-425e-8bae-88a77c888f56?api-version=2021-03-01" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Azure-AsyncOperation": [ "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/operationStatuses/08543e15-d0d6-425e-8bae-88a77c888f56?api-version=2021-03-01" ],
+        "Access-Control-Allow-Headers": [ "Location" ],
+        "Access-Control-Expose-Headers": [ "Location" ],
+        "x-ms-request-id": [ "80350376-5919-4f5f-a883-65f44212bf59" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1195" ],
+        "x-ms-correlation-request-id": [ "43072d01-2941-4992-9dbe-d031d4c47b47" ],
+        "x-ms-routing-request-id": [ "JAPANEAST:20210722T094729Z:43072d01-2941-4992-9dbe-d031d4c47b47" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Thu, 22 Jul 2021 09:47:29 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "373" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"properties\":{\"provisioningState\":\"Provisioning\",\"startIpAddress\":\"111.0.0.0\",\"endIpAddress\":\"118.255.255.255\"},\"id\":\"/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallrule3rfhvl\",\"name\":\"firewallrule3rfhvl\",\"type\":\"Microsoft.Synapse/workspaces/firewallRules\"}",
+      "isContentBase64": false
+    }
+  },
+  "Update-AzSynapseFirewallRule+[NoContext]+UpdateExpanded+$GET+https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/operationStatuses/08543e15-d0d6-425e-8bae-88a77c888f56?api-version=2021-03-01+3": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/operationStatuses/08543e15-d0d6-425e-8bae-88a77c888f56?api-version=2021-03-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "Authorization": [ "[Filtered]" ],
+        "x-ms-unique-id": [ "13" ],
+        "x-ms-client-request-id": [ "f6bbd3a9-9d12-426f-ae9b-50d639261836" ],
+        "CommandName": [ "Az.Synapse.private\\New-AzSynapseFirewallRule_CreateExpanded" ],
+        "FullCommandName": [ "New-AzSynapseFirewallRule_CreateExpanded" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "x-ms-request-id": [ "b26d9aaf-51e4-479f-b4b5-0b1e7bb93ee1" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11977" ],
+        "x-ms-correlation-request-id": [ "ac9f6b94-8657-460c-a3f3-1d211d97ed44" ],
+        "x-ms-routing-request-id": [ "JAPANEAST:20210722T094759Z:ac9f6b94-8657-460c-a3f3-1d211d97ed44" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Thu, 22 Jul 2021 09:47:58 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "22" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"status\":\"Succeeded\"}",
+      "isContentBase64": false
+    }
+  },
+  "Update-AzSynapseFirewallRule+[NoContext]+UpdateExpanded+$GET+https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallrule3rfhvl?api-version=2021-03-01+4": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallrule3rfhvl?api-version=2021-03-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "Authorization": [ "[Filtered]" ],
+        "x-ms-unique-id": [ "14" ],
+        "x-ms-client-request-id": [ "f6bbd3a9-9d12-426f-ae9b-50d639261836" ],
+        "CommandName": [ "Az.Synapse.private\\New-AzSynapseFirewallRule_CreateExpanded" ],
+        "FullCommandName": [ "New-AzSynapseFirewallRule_CreateExpanded" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "x-ms-request-id": [ "265289bf-409a-45b8-ab67-f1af8cdd4c46" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11976" ],
+        "x-ms-correlation-request-id": [ "e77d63e4-3309-41e2-9e35-f4109da12550" ],
+        "x-ms-routing-request-id": [ "JAPANEAST:20210722T094759Z:e77d63e4-3309-41e2-9e35-f4109da12550" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Thu, 22 Jul 2021 09:47:59 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "370" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"properties\":{\"provisioningState\":\"Succeeded\",\"startIpAddress\":\"111.0.0.0\",\"endIpAddress\":\"118.255.255.255\"},\"id\":\"/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallrule3rfhvl\",\"name\":\"firewallrule3rfhvl\",\"type\":\"Microsoft.Synapse/workspaces/firewallRules\"}",
+      "isContentBase64": false
+    }
+  },
+  "Update-AzSynapseFirewallRule+[NoContext]+UpdateViaIdentityExpanded+$GET+https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9?api-version=2021-03-01+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9?api-version=2021-03-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "15" ],
+        "x-ms-client-request-id": [ "02eee262-342a-402c-b223-d0eed1c38b34" ],
+        "CommandName": [ "Get-AzSynapseFirewallRule" ],
+        "FullCommandName": [ "Get-AzSynapseFirewallRule_Get" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "x-ms-request-id": [ "b2941aee-4d13-40d3-8a45-03bd181622fe" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11975" ],
+        "x-ms-correlation-request-id": [ "ba5315c5-22cf-4a1c-8497-10db0ccefee6" ],
+        "x-ms-routing-request-id": [ "JAPANEAST:20210722T094800Z:ba5315c5-22cf-4a1c-8497-10db0ccefee6" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Thu, 22 Jul 2021 09:47:59 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "370" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"properties\":{\"provisioningState\":\"Succeeded\",\"startIpAddress\":\"120.0.0.0\",\"endIpAddress\":\"129.255.255.255\"},\"id\":\"/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9\",\"name\":\"firewallruleqcrst9\",\"type\":\"Microsoft.Synapse/workspaces/firewallRules\"}",
+      "isContentBase64": false
+    }
+  },
+  "Update-AzSynapseFirewallRule+[NoContext]+UpdateViaIdentityExpanded+$GET+https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9?api-version=2021-03-01+2": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9?api-version=2021-03-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "x-ms-unique-id": [ "16" ],
+        "x-ms-client-request-id": [ "feddd606-c4d0-45ba-9ff4-8cd79928ce03" ],
+        "CommandName": [ "Az.Synapse.private\\Get-AzSynapseFirewallRule_GetViaIdentity" ],
+        "FullCommandName": [ "Get-AzSynapseFirewallRule_GetViaIdentity" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ],
+        "Authorization": [ "[Filtered]" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "x-ms-request-id": [ "86242116-f6af-4697-b435-72a4458d58db" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11974" ],
+        "x-ms-correlation-request-id": [ "776c7463-1c6c-467c-bab6-6bde97fdf5f6" ],
+        "x-ms-routing-request-id": [ "JAPANEAST:20210722T094800Z:776c7463-1c6c-467c-bab6-6bde97fdf5f6" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Thu, 22 Jul 2021 09:47:59 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "370" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"properties\":{\"provisioningState\":\"Succeeded\",\"startIpAddress\":\"120.0.0.0\",\"endIpAddress\":\"129.255.255.255\"},\"id\":\"/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9\",\"name\":\"firewallruleqcrst9\",\"type\":\"Microsoft.Synapse/workspaces/firewallRules\"}",
+      "isContentBase64": false
+    }
+  },
+  "Update-AzSynapseFirewallRule+[NoContext]+UpdateViaIdentityExpanded+$PUT+https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9?api-version=2021-03-01+3": {
+    "Request": {
+      "Method": "PUT",
+      "RequestUri": "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9?api-version=2021-03-01",
+      "Content": "{\r\n  \"properties\": {\r\n    \"endIpAddress\": \"128.255.255.255\",\r\n    \"startIpAddress\": \"121.0.0.0\"\r\n  }\r\n}",
+      "isContentBase64": false,
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "103" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 201,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Location": [ "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/operationResults/39f0c052-3b18-40b1-b011-667c9ed7dc00?api-version=2021-03-01" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "Azure-AsyncOperation": [ "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/operationStatuses/39f0c052-3b18-40b1-b011-667c9ed7dc00?api-version=2021-03-01" ],
+        "Access-Control-Allow-Headers": [ "Location" ],
+        "Access-Control-Expose-Headers": [ "Location" ],
+        "x-ms-request-id": [ "748796d8-0c63-470c-a143-72a5f02e92d3" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "x-ms-ratelimit-remaining-subscription-writes": [ "1194" ],
+        "x-ms-correlation-request-id": [ "a50cbcfb-732e-4fa1-a44b-d432f929f349" ],
+        "x-ms-routing-request-id": [ "JAPANEAST:20210722T094805Z:a50cbcfb-732e-4fa1-a44b-d432f929f349" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Thu, 22 Jul 2021 09:48:04 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "373" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"properties\":{\"provisioningState\":\"Provisioning\",\"startIpAddress\":\"121.0.0.0\",\"endIpAddress\":\"128.255.255.255\"},\"id\":\"/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9\",\"name\":\"firewallruleqcrst9\",\"type\":\"Microsoft.Synapse/workspaces/firewallRules\"}",
+      "isContentBase64": false
+    }
+  },
+  "Update-AzSynapseFirewallRule+[NoContext]+UpdateViaIdentityExpanded+$GET+https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/operationStatuses/39f0c052-3b18-40b1-b011-667c9ed7dc00?api-version=2021-03-01+4": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/operationStatuses/39f0c052-3b18-40b1-b011-667c9ed7dc00?api-version=2021-03-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "Authorization": [ "[Filtered]" ],
+        "x-ms-unique-id": [ "18" ],
+        "x-ms-client-request-id": [ "01c75bb4-c44c-4c92-88d9-e0598ee67d4b" ],
+        "CommandName": [ "Az.Synapse.private\\New-AzSynapseFirewallRule_CreateExpanded" ],
+        "FullCommandName": [ "New-AzSynapseFirewallRule_CreateExpanded" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "x-ms-request-id": [ "7537a012-92d3-4652-9677-5a29464a98f3" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11973" ],
+        "x-ms-correlation-request-id": [ "5f252db4-f2e0-4bfe-98e3-92d180859896" ],
+        "x-ms-routing-request-id": [ "JAPANEAST:20210722T094835Z:5f252db4-f2e0-4bfe-98e3-92d180859896" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Thu, 22 Jul 2021 09:48:35 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "22" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"status\":\"Succeeded\"}",
+      "isContentBase64": false
+    }
+  },
+  "Update-AzSynapseFirewallRule+[NoContext]+UpdateViaIdentityExpanded+$GET+https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9?api-version=2021-03-01+5": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://management.azure.com/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9?api-version=2021-03-01",
+      "Content": null,
+      "isContentBase64": false,
+      "Headers": {
+        "Authorization": [ "[Filtered]" ],
+        "x-ms-unique-id": [ "19" ],
+        "x-ms-client-request-id": [ "01c75bb4-c44c-4c92-88d9-e0598ee67d4b" ],
+        "CommandName": [ "Az.Synapse.private\\New-AzSynapseFirewallRule_CreateExpanded" ],
+        "FullCommandName": [ "New-AzSynapseFirewallRule_CreateExpanded" ],
+        "ParameterSetName": [ "__AllParameterSets" ],
+        "User-Agent": [ "AzurePowershell/Az4.0.0-preview" ]
+      },
+      "ContentHeaders": {
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Cache-Control": [ "no-cache" ],
+        "Pragma": [ "no-cache" ],
+        "Strict-Transport-Security": [ "max-age=31536000; includeSubDomains" ],
+        "x-ms-request-id": [ "43f47dac-428f-4ac9-9169-c6cabd6419d9" ],
+        "Server": [ "Microsoft-HTTPAPI/2.0" ],
+        "x-ms-ratelimit-remaining-subscription-reads": [ "11972" ],
+        "x-ms-correlation-request-id": [ "9f55269f-69b3-4dee-b19c-195039ca4b44" ],
+        "x-ms-routing-request-id": [ "JAPANEAST:20210722T094836Z:9f55269f-69b3-4dee-b19c-195039ca4b44" ],
+        "X-Content-Type-Options": [ "nosniff" ],
+        "Date": [ "Thu, 22 Jul 2021 09:48:36 GMT" ]
+      },
+      "ContentHeaders": {
+        "Content-Length": [ "370" ],
+        "Content-Type": [ "application/json; charset=utf-8" ],
+        "Expires": [ "-1" ]
+      },
+      "Content": "{\"properties\":{\"provisioningState\":\"Succeeded\",\"startIpAddress\":\"121.0.0.0\",\"endIpAddress\":\"128.255.255.255\"},\"id\":\"/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/synapse-rg-psmiot/providers/Microsoft.Synapse/workspaces/workspacepl0qaz/firewallRules/firewallruleqcrst9\",\"name\":\"firewallruleqcrst9\",\"type\":\"Microsoft.Synapse/workspaces/firewallRules\"}",
+      "isContentBase64": false
+    }
+  }
+}

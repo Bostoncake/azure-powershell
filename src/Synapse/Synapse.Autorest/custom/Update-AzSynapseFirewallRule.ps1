@@ -134,14 +134,22 @@ function Update-AzSynapseFirewallRule {
             $hasStartIPAddress = $PSBoundParameters.Remove('StartIPAddress')
             $hasEndIPAddress = $PSBoundParameters.Remove('EndIPAddress')
             $hasAsJob = $PSBoundParameters.Remove('AsJob')
+            $isViaIdentity = $PSBoundParameters.Remove('InputObject')
             $null = $PSBoundParameters.Remove('RuleName')
             $null = $PSBoundParameters.Remove('WhatIf')
             $null = $PSBoundParameters.Remove('Confirm')
 
-            $workspace = Az.Synapse\Get-AzSynapseFirewallRule @PSBoundParameters
+            $workspace
+            if ($isViaIdentity) {
+                $workspace = Az.Synapse.private\Get-AzSynapseFirewallRule_GetViaIdentity -InputObject $InputObject @PSBoundParameters
+            }
+            else {
+                $workspace = Az.Synapse.private\Get-AzSynapseFirewallRule_List @PSBoundParameters
+            }
+
+            
 
             # 2. PUT
-            $isViaIdentity = $PSBoundParameters.Remove('InputObject')
             $null = $PSBoundParameters.Remove('WorkspaceName')
             $null = $PSBoundParameters.Remove('ResourceGroupName')
             $null = $PSBoundParameters.Remove('SubscriptionId')
@@ -181,9 +189,10 @@ function Update-AzSynapseFirewallRule {
                         $getWorkspaceName = $workspace.Id.split("/")[8]
                         $getResourceGroupName = $workspace.Id.split("/")[4]
                         $getFirewallRuleName = $workspace.Id.split("/")[10]
-                        Az.Synapse\New-AzSynapseFirewallRule -WorkspaceName $getWorkspaceName -ResourceGroupName $getResourceGroupName -RuleName $getFirewallRuleName -StartIpAddress $getStartIPAddress -EndIPAddress $getEndIPAddress @PSBoundParameters
+                        $getSubscriptionId = $workspace.Id.split("/")[2]
+                        Az.Synapse.private\New-AzSynapseFirewallRule_CreateExpanded -WorkspaceName $getWorkspaceName -ResourceGroupName $getResourceGroupName -RuleName $getFirewallRuleName -StartIpAddress $getStartIPAddress -EndIPAddress $getEndIPAddress -SubscriptionId $getSubscriptionId @PSBoundParameters
                     } else {
-                        Az.Synapse\New-AzSynapseFirewallRule -WorkspaceName $WorkspaceName -ResourceGroupName $ResourceGroupName -RuleName $RuleName -StartIpAddress $getStartIPAddress -EndIPAddress $getEndIPAddress @PSBoundParameters
+                        Az.Synapse.private\New-AzSynapseFirewallRule_CreateExpanded -WorkspaceName $WorkspaceName -ResourceGroupName $ResourceGroupName -RuleName $RuleName -StartIpAddress $getStartIPAddress -EndIPAddress $getEndIPAddress -SubscriptionId $SubscriptionId @PSBoundParameters
                     }
                 }
             } else {

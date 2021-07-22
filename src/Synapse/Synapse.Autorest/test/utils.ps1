@@ -48,7 +48,7 @@ function setupEnv() {
     $testWorkspace1 = "workspace" + $rstr2
     $testStorageAccount = "storageAccount" + $rstr3
     $testFileSystem = "fileSystem" + $rstr4
-    $passwordString = "password" + $rstr5
+    $passwordString = "Password1!" + $rstr5
     $password = ConvertTo-SecureString $passwordString -AsPlainText -Force
     $loginUser = "user" + $rstr6
     $creds = New-Object System.Management.Automation.PSCredential ($loginUser, $password)
@@ -67,9 +67,9 @@ function setupEnv() {
     $firewallRule2End = "119.255.255.255"
     $firewallRule3Start = "120.0.0.0"
     $firewallRule3End = "129.255.255.255"
-    New-AzSynapseFirewallRule -WorkspaceName $testWorkspace1 -Name $testFirewallRule1 -ResourceGroupName $resourceGroup -StartIpAddress $firewallRule1Start -EndIpAddress $firewallRule1End
-    New-AzSynapseFirewallRule -WorkspaceName $testWorkspace1 -Name $testFirewallRule2 -ResourceGroupName $resourceGroup -StartIpAddress $firewallRule2Start -EndIpAddress $firewallRule2End
-    New-AzSynapseFirewallRule -WorkspaceName $testWorkspace1 -Name $testFirewallRule3 -ResourceGroupName $resourceGroup -StartIpAddress $firewallRule3Start -EndIpAddress $firewallRule3End
+    New-AzSynapseFirewallRule -WorkspaceName $testWorkspace1 -RuleName $testFirewallRule1 -ResourceGroupName $resourceGroup -StartIpAddress $firewallRule1Start -EndIpAddress $firewallRule1End
+    New-AzSynapseFirewallRule -WorkspaceName $testWorkspace1 -RuleName $testFirewallRule2 -ResourceGroupName $resourceGroup -StartIpAddress $firewallRule2Start -EndIpAddress $firewallRule2End
+    New-AzSynapseFirewallRule -WorkspaceName $testWorkspace1 -RuleName $testFirewallRule3 -ResourceGroupName $resourceGroup -StartIpAddress $firewallRule3Start -EndIpAddress $firewallRule3End
     $null = $env.Add("firewallRule1Name", $testFirewallRule1)
     $null = $env.Add("firewallRule1Start", $firewallRule1Start)
     $null = $env.Add("firewallRule1End", $firewallRule1End)
